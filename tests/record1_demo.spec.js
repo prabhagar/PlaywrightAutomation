@@ -6,8 +6,11 @@ test('test', async ({ page }) => {
   await page.locator('[data-test="username"]').fill('standard_user');
   await page.locator('[data-test="username"]').press('Tab');
   await page.locator('[data-test="password"]').fill('secret_sauce');
-  await page.locator('[data-test="login-button123"]').click();
+  await page.locator('#login-button').click();
   await page.locator('[data-test="add-to-cart-sauce-labs-backpack"]').click();
   await page.getByRole('button', { name: 'Open Menu' }).click();
-  await page.getByRole('link', { name: 'Logout' }).click();
+  await page.locator('[data-test="shopping-cart-link"]').click();
+  await page.locator('[data-test="remove-sauce-labs-backpack"]').click();
+  await page.getByRole('button', { name: 'Open Menu' }).click();
+  await page.locator('#logout_sidebar_link').click();
 });
