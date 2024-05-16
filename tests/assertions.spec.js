@@ -11,6 +11,9 @@ test('Assert fields in Kitchen app', async ({ page }) => {
         await expect(page.locator('text=The Kitchen')).toHaveText('The Kitchen');
         // await expect(page.locator('selector')).toHaveAttribute('class', /.*value/);
         // await expect(locator).toHaveCSS('selected row');
+        await expect(page).toHaveURL('https://kitchen.applitools.com')
+        await expect(page).toHaveTitle('The Kitchen');
+        await expect(page).toHaveScreenshot();
     }
     else {
         await expect(page.locator('text=The Kitchen')).toBeHidden();
