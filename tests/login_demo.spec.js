@@ -39,7 +39,9 @@ test('Validate login page for orange HRM website website', async ({ page }) => {
     await page.getByRole('heading', { name: 'Dashboard' }).click();
     await page.getByText('My Actions').click();
     await page.getByText('Buzz Latest Posts').click();
-    await page.getByText('Sachinpatrick24 Singh').click();
+    // await page.getByRole('banner').getByRole('img', { name: 'profile picture' }).click();
+    // await page.getByAltText('profile picture').click();
+    await imageElement.setAttribute('alt', 'profile picture');
     await page.getByRole('menuitem', { name: 'Logout' }).click();
 
 });
